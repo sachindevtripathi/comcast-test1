@@ -1,2 +1,15 @@
-<h3>Home Component</h3>
-<p>Welcome to Angular Seed</p>
+<div>
+    <div style="border-bottom: 1px solid #000; display: inline-block;">
+        <div class="inline-block" (click)="doSort('name', nameAsc)">Name</div>
+        <div class="inline-block" (click)="doSort('category', categoryAsc)">Category</div>
+        <div class="inline-block" (click)="doSort('amount', amountAsc)">Amount</div>
+    </div>
+
+    <li *ngFor="let item of mydata| sortBy: sorter" style="list-style: none">
+        <div class="inline-block">{{item.name}}</div>
+       
+        <div class="inline-block">{{item.category}}</div>
+        
+        <div class="inline-block">{{item.amount}}</div>
+    </li>
+</div>
